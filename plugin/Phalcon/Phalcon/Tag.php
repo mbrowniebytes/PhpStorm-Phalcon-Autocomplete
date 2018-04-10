@@ -47,41 +47,41 @@ class Tag
     /**
      * Pre-assigned values for components
      */
-    static protected $_displayValues;
+    protected $_displayValues;
 
     /**
      * HTML document title
      */
-    static protected $_documentTitle = null;
+    protected $_documentTitle = null;
 
 
-    static protected $_documentAppendTitle = null;
+    protected $_documentAppendTitle = null;
 
 
-    static protected $_documentPrependTitle = null;
+    protected $_documentPrependTitle = null;
 
 
-    static protected $_documentTitleSeparator = null;
+    protected $_documentTitleSeparator = null;
 
 
-    static protected $_documentType = 11;
+    protected $_documentType = 11;
 
     /**
      * Framework Dispatcher
      */
-    static protected $_dependencyInjector;
+    protected $_dependencyInjector;
 
 
-    static protected $_urlService = null;
+    protected $_urlService = null;
 
 
-    static protected $_dispatcherService = null;
+    protected $_dispatcherService = null;
 
 
-    static protected $_escaperService = null;
+    protected $_escaperService = null;
 
 
-    static protected $_autoEscape = true;
+    protected $_autoEscape = true;
 
 
     /**
@@ -90,7 +90,7 @@ class Tag
      * @param array $params
      * @return EscaperInterface
      */
-    public static function getEscaper(array $params) {}
+    public function getEscaper(array $params) {}
 
     /**
      * Renders parameters keeping order in their HTML attributes
@@ -99,42 +99,42 @@ class Tag
      * @param array $attributes
      * @return string
      */
-    public static function renderAttributes($code, array $attributes) {}
+    public function renderAttributes($code, array $attributes) {}
 
     /**
      * Sets the dependency injector container.
      *
      * @param DiInterface $dependencyInjector
      */
-    public static function setDI(DiInterface $dependencyInjector) {}
+    public function setDI(DiInterface $dependencyInjector) {}
 
     /**
      * Internally gets the request dispatcher
      *
      * @return DiInterface
      */
-    public static function getDI() {}
+    public function getDI() {}
 
     /**
      * Returns a URL service from the default DI
      *
      * @return \Phalcon\Mvc\UrlInterface
      */
-    public static function getUrlService() {}
+    public function getUrlService() {}
 
     /**
      * Returns an Escaper service from the default DI
      *
      * @return EscaperInterface
      */
-    public static function getEscaperService() {}
+    public function getEscaperService() {}
 
     /**
      * Set autoescape mode in generated html
      *
      * @param bool $autoescape
      */
-    public static function setAutoescape($autoescape) {}
+    public function setAutoescape($autoescape) {}
 
     /**
      * Assigns default values to generated tags by helpers
@@ -150,7 +150,7 @@ class Tag
      * @param string $id
      * @param string $value
      */
-    public static function setDefault($id, $value) {}
+    public function setDefault($id, $value) {}
 
     /**
      * Assigns default values to generated tags by helpers
@@ -170,7 +170,7 @@ class Tag
      * @param array $values
      * @param bool $merge
      */
-    public static function setDefaults(array $values, $merge = false) {}
+    public function setDefaults(array $values, $merge = false) {}
 
     /**
      * Alias of Phalcon\Tag::setDefault
@@ -178,7 +178,7 @@ class Tag
      * @param string $id
      * @param string $value
      */
-    public static function displayTo($id, $value) {}
+    public function displayTo($id, $value) {}
 
     /**
      * Check if a helper has a default value set using Phalcon\Tag::setDefault or value from $_POST
@@ -186,7 +186,7 @@ class Tag
      * @param string $name
      * @return bool
      */
-    public static function hasValue($name) {}
+    public function hasValue($name) {}
 
     /**
      * Every helper calls this function to check whether a component has a predefined
@@ -196,7 +196,7 @@ class Tag
      * @param array $params
      * @return mixed
      */
-    public static function getValue($name, $params = null) {}
+    public function getValue($name, $params = null) {}
 
     /**
      * Resets the request and internal values to avoid those fields will have any default value.
@@ -204,7 +204,7 @@ class Tag
      * @deprecated Will be removed in 4.0.0
      * @deprecated
      */
-    public static function resetInput() {}
+    public function resetInput() {}
 
     /**
      * Builds a HTML A tag using framework conventions
@@ -261,7 +261,7 @@ class Tag
      * @param boolean $local
      * @return string
      */
-    public static function linkTo($parameters, $text = null, $local = true) {}
+    public function linkTo($parameters, $text = null, $local = true) {}
 
     /**
      * Builds generic INPUT tags
@@ -271,7 +271,7 @@ class Tag
      * @param boolean $asValue
      * @return string
      */
-    static protected final function _inputField($type, $parameters, $asValue = false) {}
+    protected final function _inputField($type, $parameters, $asValue = false) {}
 
     /**
      * Builds INPUT tags that implements the checked attribute
@@ -280,7 +280,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    static protected final function _inputFieldChecked($type, $parameters) {}
+    protected final function _inputFieldChecked($type, $parameters) {}
 
     /**
      * Builds a HTML input[type="color"] tag
@@ -288,7 +288,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function colorField($parameters) {}
+    public function colorField($parameters) {}
 
     /**
      * Builds a HTML input[type="text"] tag
@@ -305,7 +305,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function textField($parameters) {}
+    public function textField($parameters) {}
 
     /**
      * Builds a HTML input[type="number"] tag
@@ -323,7 +323,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function numericField($parameters) {}
+    public function numericField($parameters) {}
 
     /**
      * Builds a HTML input[type="range"] tag
@@ -331,7 +331,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function rangeField($parameters) {}
+    public function rangeField($parameters) {}
 
     /**
      * Builds a HTML input[type="email"] tag
@@ -343,7 +343,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function emailField($parameters) {}
+    public function emailField($parameters) {}
 
     /**
      * Builds a HTML input[type="date"] tag
@@ -360,7 +360,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function dateField($parameters) {}
+    public function dateField($parameters) {}
 
     /**
      * Builds a HTML input[type="datetime"] tag
@@ -368,7 +368,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function dateTimeField($parameters) {}
+    public function dateTimeField($parameters) {}
 
     /**
      * Builds a HTML input[type="datetime-local"] tag
@@ -376,7 +376,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function dateTimeLocalField($parameters) {}
+    public function dateTimeLocalField($parameters) {}
 
     /**
      * Builds a HTML input[type="month"] tag
@@ -384,7 +384,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function monthField($parameters) {}
+    public function monthField($parameters) {}
 
     /**
      * Builds a HTML input[type="time"] tag
@@ -392,7 +392,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function timeField($parameters) {}
+    public function timeField($parameters) {}
 
     /**
      * Builds a HTML input[type="week"] tag
@@ -400,7 +400,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function weekField($parameters) {}
+    public function weekField($parameters) {}
 
     /**
      * Builds a HTML input[type="password"] tag
@@ -417,7 +417,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function passwordField($parameters) {}
+    public function passwordField($parameters) {}
 
     /**
      * Builds a HTML input[type="hidden"] tag
@@ -434,7 +434,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function hiddenField($parameters) {}
+    public function hiddenField($parameters) {}
 
     /**
      * Builds a HTML input[type="file"] tag
@@ -446,7 +446,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function fileField($parameters) {}
+    public function fileField($parameters) {}
 
     /**
      * Builds a HTML input[type="search"] tag
@@ -454,7 +454,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function searchField($parameters) {}
+    public function searchField($parameters) {}
 
     /**
      * Builds a HTML input[type="tel"] tag
@@ -462,7 +462,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function telField($parameters) {}
+    public function telField($parameters) {}
 
     /**
      * Builds a HTML input[type="url"] tag
@@ -470,7 +470,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function urlField($parameters) {}
+    public function urlField($parameters) {}
 
     /**
      * Builds a HTML input[type="check"] tag
@@ -492,7 +492,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function checkField($parameters) {}
+    public function checkField($parameters) {}
 
     /**
      * Builds a HTML input[type="radio"] tag
@@ -514,7 +514,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function radioField($parameters) {}
+    public function radioField($parameters) {}
 
     /**
      * Builds a HTML input[type="image"] tag
@@ -535,7 +535,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function imageInput($parameters) {}
+    public function imageInput($parameters) {}
 
     /**
      * Builds a HTML input[type="submit"] tag
@@ -552,7 +552,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function submitButton($parameters) {}
+    public function submitButton($parameters) {}
 
     /**
      * Builds a HTML SELECT tag using a PHP array for options
@@ -571,7 +571,7 @@ class Tag
      * @param array $data
      * @return string
      */
-    public static function selectStatic($parameters, $data = null) {}
+    public function selectStatic($parameters, $data = null) {}
 
     /**
      * Builds a HTML SELECT tag using a Phalcon\Mvc\Model resultset as options
@@ -595,7 +595,7 @@ class Tag
      * @param array $data
      * @return string
      */
-    public static function select($parameters, $data = null) {}
+    public function select($parameters, $data = null) {}
 
     /**
      * Builds a HTML TEXTAREA tag
@@ -618,7 +618,7 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function textArea($parameters) {}
+    public function textArea($parameters) {}
 
     /**
      * Builds a HTML FORM tag
@@ -643,14 +643,14 @@ class Tag
      * @param array $parameters
      * @return string
      */
-    public static function form($parameters) {}
+    public function form($parameters) {}
 
     /**
      * Builds a HTML close FORM tag
      *
      * @return string
      */
-    public static function endForm() {}
+    public function endForm() {}
 
     /**
      * Set the title of view content
@@ -661,7 +661,7 @@ class Tag
      *
      * @param string $title
      */
-    public static function setTitle($title) {}
+    public function setTitle($title) {}
 
     /**
      * Set the title separator of view content
@@ -672,21 +672,21 @@ class Tag
      *
      * @param string $titleSeparator
      */
-    public static function setTitleSeparator($titleSeparator) {}
+    public function setTitleSeparator($titleSeparator) {}
 
     /**
      * Appends a text to current document title
      *
      * @param mixed $title
      */
-    public static function appendTitle($title) {}
+    public function appendTitle($title) {}
 
     /**
      * Prepends a text to current document title
      *
      * @param mixed $title
      */
-    public static function prependTitle($title) {}
+    public function prependTitle($title) {}
 
     /**
      * Gets the current document title.
@@ -703,7 +703,7 @@ class Tag
      * @param bool $tags
      * @return string
      */
-    public static function getTitle($tags = true) {}
+    public function getTitle($tags = true) {}
 
     /**
      * Gets the current document title separator
@@ -718,7 +718,7 @@ class Tag
      *
      * @return string
      */
-    public static function getTitleSeparator() {}
+    public function getTitleSeparator() {}
 
     /**
      * Builds a LINK[rel="stylesheet"] tag
@@ -738,7 +738,7 @@ class Tag
      * @param boolean $local
      * @return string
      */
-    public static function stylesheetLink($parameters = null, $local = true) {}
+    public function stylesheetLink($parameters = null, $local = true) {}
 
     /**
      * Builds a SCRIPT[type="javascript"] tag
@@ -758,7 +758,7 @@ class Tag
      * @param boolean $local
      * @return string
      */
-    public static function javascriptInclude($parameters = null, $local = true) {}
+    public function javascriptInclude($parameters = null, $local = true) {}
 
     /**
      * Builds HTML IMG tags
@@ -785,7 +785,7 @@ class Tag
      * @param boolean $local
      * @return string
      */
-    public static function image($parameters = null, $local = true) {}
+    public function image($parameters = null, $local = true) {}
 
     /**
      * Converts texts into URL-friendly titles
@@ -800,21 +800,21 @@ class Tag
      * @param mixed $replace
      * @return string
      */
-    public static function friendlyTitle($text, $separator = "-", $lowercase = true, $replace = null) {}
+    public function friendlyTitle($text, $separator = "-", $lowercase = true, $replace = null) {}
 
     /**
      * Set the document type of content
      *
      * @param int $doctype
      */
-    public static function setDocType($doctype) {}
+    public function setDocType($doctype) {}
 
     /**
      * Get the document type declaration of content
      *
      * @return string
      */
-    public static function getDocType() {}
+    public function getDocType() {}
 
     /**
      * Builds a HTML tag
@@ -826,7 +826,7 @@ class Tag
      * @param bool $useEol
      * @return string
      */
-    public static function tagHtml($tagName, $parameters = null, $selfClose = false, $onlyStart = false, $useEol = false) {}
+    public function tagHtml($tagName, $parameters = null, $selfClose = false, $onlyStart = false, $useEol = false) {}
 
     /**
      * Builds a HTML tag closing tag
@@ -839,6 +839,6 @@ class Tag
      * @param bool $useEol
      * @return string
      */
-    public static function tagHtmlClose($tagName, $useEol = false) {}
+    public function tagHtmlClose($tagName, $useEol = false) {}
 
 }
